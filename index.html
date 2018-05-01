@@ -107,12 +107,13 @@
     </section>
 
     <section class="slide" id="what-is-fiber">
-        <h2>What is React Fiber?</h2>
+        <h2>React Fiber</h2>
         <ul class="big-list">
             <li class="next">React core algorithm reimplementation</li>
-            <li class="next">Error boundaries</li>
-            <li class="next">Suspense</li>
             <li class="next">First release with v16</li>
+            <li class="next">Error boundaries</li>
+            <li class="next">Priorities and scheduling</li>
+            <li class="next">Asynchronous rendering</li>
             <li class="next bold">API for custom renderers</li>
         </ul>
 
@@ -130,6 +131,17 @@
             <li class="next">React Native</li>
             <li class="next">React VR</li>
         </ol>
+    </section>
+
+    <section class="slide">
+        <h2>Idea of a custom renderer:</h2>
+        <p>
+            Custom renderers allow us to render user interfaces in different environments
+            using the same tools
+        </p>
+        <p>
+            Learn once – use anywhere
+        </p>
     </section>
 
     <section class="slide">
@@ -153,6 +165,16 @@
         </ol>
     </section>
 
+    <section class="slide">
+        <h2>Simplified rendering process</h2>
+        <ol class="big-list">
+            <li class="next">setState/forceUpdate</li>
+            <li class="next">update props of Host components</li>
+            <li class="next">calculate changed props</li>
+            <li class="next">send an update signal to the host environment</li>
+        </ol>
+    </section>
+<!-- 
     <section class="slide">
         <h2>JSX</h2>
         <pre>
@@ -179,19 +201,118 @@
             <code>      )</code>
             <code> }</code>
         </pre>
+    </section> -->
+
+    <section class="slide">
+        <h2 class="shout shrink">Smart Home Appliances</h2>
     </section>
 
+    <section class="slide" id="smart-device">
+        <h2>Is your device smart?</h2>
+        <div class="slide-container">
+            <div class="left-comparison">
+                <img src="images/simple-led.jpg" class="smart-device-image">
+                <ol>
+                    <li class="next">Turn on/off</li>
+                </ol>
+            </div>
+            <div class="right-comparison">
+                <img src="images/yeelight.jpg" class="smart-device-image">
+                <ol>
+                    <li class="next">WiFi/Bluetooth connectivity</li>
+                    <li class="next">Can be controlled remotely</li>
+                    <li class="next">Brightness/color can be adjusted</li>
+                    <li class="next">DDoSes Github 🤪</li>
+                </ol>
+            </div>
+        </div>
+        <style>
+            #smart-device .slide-container {
+                display: flex;
+            }
+
+            #smart-device .left-comparison {
+                flex: 1;
+            }
+
+            #smart-device .right-comparison {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+            }
+
+            #smart-device .smart-device-image {
+                width: 300px;
+            }
+        </style>
+    </section>
+
+    <section class="slide">
+        <h2>Xiaomi Smart Home</h2>
+        <ol class="big-list">
+            <li class="next">Lamps</li>
+            <li class="next">Buttons</li>
+            <li class="next">Switches</li>
+            <li class="next">Sensors</li>
+            <li class="next">Sockets</li>
+        </ol>
+    </section>
+
+    <section class="slide">
+        <h2>Xiaomi Yeelight Light bulb</h2>
+    </section>
+
+    <section class="slide">
+        <h2>Xiaomi ZigBee controller</h2>
+    </section>
+
+    <section class="slide" id="mihome">
+        <h2>Xiaomi MiHome</h2>
+        <div class="container">
+            <img src="images/mihome-1.png" class="next">
+            <img src="images/mihome-2.png" class="next">
+            <img src="images/mihome-3.png" class="next">
+        </div>
+        <style>
+            #mihome .container {
+                display: flex;
+                justify-content: center;
+            }
+            
+            #mihome img {
+                width: 300px;
+                position: absolute;
+            }
+        </style>
+    </section>
+
+    <section class="slide" id="smart-home-react">
+        <h2 class="shout">Smart Home  + React <br/> = <br/> ?</h2>
+        <style>
+            #smart-home-react .shout {
+                font-size: 80px;
+            }
+        </style>
+    </section>
 
     <section class="slide">
         <h2 class="shout shrink">react-dom</h2>
     </section>
 
-    <section class="slide">
-        <h2 class="shout shrink">react-smart-dom</h2>
+    <section class="slide" id="smart-dom-big">
+        <h2 class="shout shrink">react-<span class="red-header">smart</span>-dom</h2>
+
+        <style>
+            #smart-dom-big .red-header {
+                color: red;
+            }
+        </style>
     </section>
 
     <section class="slide">
-        <h2 class="shout shrink">DEMO!</h2>
+        <h2 class="shout shrink">DEMO</h2>
     </section>
 
 
