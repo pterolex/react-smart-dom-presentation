@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>React Fiber</title>
+    <title>React renderer for your Smart home</title>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -106,147 +106,50 @@
         </style>
     </section>
 
-    <section class="slide">
+    <section class="slide" id="what-is-fiber">
         <h2>What is React Fiber?</h2>
         <ul class="big-list">
             <li class="next">React core algorithm reimplementation</li>
-            <li class="next">No change in public API at first release</li>
+            <li class="next">Error boundaries</li>
+            <li class="next">Suspense</li>
             <li class="next">First release with v16</li>
+            <li class="next bold">API for custom renderers</li>
         </ul>
-    </section>
-
-    <section class="slide">
-        <h2 class="shout shrink">Why?</h2>
-    </section>
-
-    <section class="slide" id="ideal-app">
-        <h2>Smooth application</h2>
-        <h2 class="next">60 fps</h2>
 
         <style>
-            #ideal-app {
-                padding-top: 200px;
+            #what-is-fiber .bold {
+                font-weight: bold;
             }
-            #ideal-app > h2 {
-                text-align: center;
-                font-size: 90px;
-            }
-        </style>
-    </section>
-
-    <section class="slide" id="expectation">
-        <h2>Expectation</h2>
-
-        <img src="images/expect.png" />
-
-        <style>
-            #expectation img {
-                width: 100%;
-                margin-top: 130px;
-            }
-        </style>
-    </section>
-
-    <section class="slide" id="reality">
-        <h2>Reality</h2>
-
-        <img src="images/reality.png" />
-
-        <style>
-            #reality img {
-                width: 100%;
-                margin-top: 130px;
-            }
-        </style>
-    </section>
-
-    <section class="slide" id="problem">
-        <h2>What work does React perform?</h2>
-
-        <img src="images/React-tree.png" />
-
-        <style>
-        #problem img {
-            width: 500px;
-            margin-left: 25%;
-        }
-        </style>
-    </section>
-
-    <section class="slide" id="stack">
-        <h2>Deep down the call stack...</h2>
-
-        <img src="images/js-stack.png" class="cover"/>
-
-        <style>
-        #stack h2 {
-            text-align: center;
-        }
         </style>
     </section>
 
     <section class="slide">
-        <h2 class="shout shrink">Scheduling</h2>
-    </section>
-
-    <section class="slide">
-        <h2>How should work be prioritized?</h2>
+        <h2>Official renderers from Facebook:</h2>
         <ol class="big-list">
-            <li>Data subscriptions</li>
-            <li>Text input</li>
-            <li>Off-screen elements</li>
-            <li>Animations</li>
+            <li class="next">React DOM</li>
+            <li class="next">React Native</li>
+            <li class="next">React VR</li>
         </ol>
     </section>
 
     <section class="slide">
-        <h2 class="shout shrink">Demo app</h2>
-    </section>
-
-    <section class="slide">
-        <video controls loop autoplay="autoplay">
-            <source src="stack_example.mov">
-        </video>
-    </section>
-
-    <section class="slide">
-        <h2 class="shout shrink"><a href="http://localhost:8050/examples/fiber/index.html" target="_blank">Demo app <br />with Fiber</a></h2>
-    </section>
-
-    <section class="slide">
-        <video controls loop autoplay="autoplay">
-            <source src="fiber_example.mov">
-        </video>
-    </section>
-
-    <section class="slide performance">
-        <h2>Performance</h2>
-        <img src="./images/stack_performance.png" />
-    </section>
-
-    <section class="slide performance">
-        <h2>Fiber Performance</h2>
-        <img src="./images/fiber_performance.png" />
-    </section>
-
-    <section class="slide">
-        <h2 class="shout shrink">How?</h2>
-    </section>
-
-    <section class="slide">
-        <h2>Browser APIs for scheduling work</h2>
+        <h2>Less known renderers</h2>
         <ol class="big-list">
-            <li class="next">requestAnimationFrame(callback)</li>
-            <li class="next">requestIdleCallback(callback)</li>
+            <li class="next">React Blessed</li>
+            <li class="next">React Hardware</li>
         </ol>
     </section>
 
     <section class="slide">
-        <h2>Idea: split the work into smaller chunks</h2>
+        <h2>Exotic renderers</h2>
+        <iframe src="https://github.com/chentsulin/awesome-react-renderer"></iframe>
+    </section>
+
+    <section class="slide">
+        <h2>What can be rendered with React?</h2>
         <ol class="big-list">
-            <li class="next">Perform chunk computation</li>
-            <li class="next">Stop and wait for the frame to be drawn</li>
-            <li class="next">Perform next chunk computation</li>
+            <li class="next">a tree</li>
+            <li class="next">changes over time</li>
         </ol>
     </section>
 
@@ -278,165 +181,25 @@
         </pre>
     </section>
 
-    <section class="slide performance">
-        <img src="./images/call-stack.png" />
+
+    <section class="slide">
+        <h2 class="shout shrink">react-dom</h2>
     </section>
 
     <section class="slide">
-        <h2>How can we pause and resume functions?</h2>
-        <ol class="big-list">
-            <li>Interrupt current call stack</li>
-            <li>Save call stack data</li>
-            <li>Perfrom high priority work</li>
-            <li>Resume the original call stack</li>
-        </ol>
-    </section>
-
-    <section class="slide" id="solution">
-        <h2 class="shout shrink">Solution: <br />reimplement the call stack!</h2>
-        <style>
-            #solution {
-                text-align: center;
-            }
-        </style>
+        <h2 class="shout shrink">react-smart-dom</h2>
     </section>
 
     <section class="slide">
-        <h2 >Fiber is:</h2>
-        <ol class="big-list">
-            <li>Unit of work</li>
-            <li>Virtual stack frame</li>
-        </ol>
+        <h2 class="shout shrink">DEMO!</h2>
     </section>
 
-    <section class="slide" id="comparison">
-        <table>
-            <tr>
-                <th>Stack frame</th>
-                <th>Fiber</th>
-            </tr>
-            <tr>
-                <td>function</td>
-                <td>component type</td>
-            </tr>
-            <tr>
-                <td>body (nested function calls)</td>
-                <td>children</td>
-            </tr>
-            <tr>
-                <td>return address</td>
-                <td>parent component</td>
-            </tr>
-            <tr>
-                <td>arguments</td>
-                <td>props</td>
-            </tr>
-            <tr>
-                <td>return value</td>
-                <td>DOM element</td>
-            </tr>
-        </table>
-        <style>
-            #comparison tr {
-                line-height: 80px;
-            }
-        </style>
-    </section>
-
-
-    <section class="slide" id="fiber-demo">
-        <h2>Let's render a tree</h2>
-        <pre>
-            <code> &lt;div&gt;</code>
-            <code>     &lt;p&gt; 1 &lt;/p&gt;</code>
-            <code>     &lt;p&gt; 2 &lt;/p&gt;</code>
-            <code> &lt;/div&gt;</code>
-        </pre>
-    </section>
-
-    <section class="slide" id="debugger">
-        <h2><a href="http://localhost:3000/" target="_blank">React Fiber Debugger</a></h2>
-        <img src="./images/debugger.png" />
-        <style>
-            #debugger {
-                text-align: center;
-            }
-            #debugger img {
-                width: 600px;
-            }
-        </style>
-    </section>
-
-    <section class="slide">
-        <h2>Important new features</h2>
-        <ol class="big-list">
-            <li class="next">Error boundaries</li>
-            <li class="next">Return multiple elements from render</li>
-            <!-- <li class="next">API for Portals</li> -->
-            <li class="next">API for custom renderers</li>
-        </ol>
-    </section>
-
-    <section class="slide">
-        <h2>Return multiple elements from render</h2>
-        <pre>
-            <code> render() {</code>
-            <code>     return (<mark>[</mark></code>
-            <code>          &lt;tr&gt; 1 &lt;/tr&gt;</code>
-            <code>          &lt;tr&gt; 2 &lt;/tr&gt;</code>
-            <code>     <mark>]</mark>);</code>
-            <code> }</code>
-        </pre>
-    </section>
-
-    <section class="slide" id="isFiberReadyYet">
-        <h2>isFiberReadyYet.com</h2>
-        <img src="./images/isfiberreadyyet.png" />
-
-        <style>
-            #isFiberReadyYet img {
-                width: 900px;
-            }
-        </style>
-    </section>
-
-    <section class="slide" id="am-i-using">
-        <img src="./images/am-i-using.jpg" class="cover"/>
-        <style>
-            #am-i-using img {
-                height: 100%;
-            }
-        </style>
-    </section>
-
-    <section class="slide">
-        <h2>Am I using Fiber?</h2>
-        <img src="images/react-dom-fiber.jpg" />
-    </section>
-
-    <section class="slide">
-        <h2>How to test Fiber today?</h2>
-        <ol class="big-list">
-            <li>Join beta testers group: <a href="https://facebook.com/groups/reactfiberbeta">facebook.com/groups/reactfiberbeta</a></li>
-            <li>Navigate to <a href="https://beta.facebook.com">beta.facebook.com</a></li>
-        </ol>
-    </section>
-
-    <section class="slide">
-        <h2>Test locally</h2>
-        <ol class="big-list">
-            <li>Master branch at React repository</li>
-            <li>npm install react@<mark>next</mark> react-dom@<mark>next</mark></li>
-            <li class="next">Use <mark>ReactDOMFiber</mark> instead of ReactDOM</li>
-        </ol>
-    </section>
 
     <section class="slide" id="references">
         <h2>References</h2>
         <ul>
-            <li><a href="https://www.youtube.com/watch?v=aV1271hd9ew">Andrew Clark: What's Next for React — ReactNext 2016</a></li>
-            <li><a href="https://github.com/acdlite/react-fiber-architecture">Andrew Clark: React fiber architecture</a></li>
-            <li><a href="https://github.com/koba04/react-fiber-resources">React Fiber resources</a></li>
+            <li><a href="https://github.com/iamdustan/tiny-react-renderer">Tiny React Renderer</a></li>
+            <li><a href="https://github.com/chentsulin/awesome-react-renderer">Awesome list of React Renderer</a></li>
         </ul>
     </section>
 
