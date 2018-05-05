@@ -29,6 +29,16 @@
             width: 100%;
             margin-top: 100px;
         }
+
+        .mihome .container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .mihome img {
+            width: 300px;
+            position: absolute;
+        }
     </style>
     <script>
 
@@ -109,8 +119,7 @@
     <section class="slide" id="what-is-fiber">
         <h2>React Fiber</h2>
         <ul class="big-list">
-            <li class="next">React core algorithm reimplementation</li>
-            <li class="next">First release with v16</li>
+            <li class="next">React core algorithm reimplementation (v16)</li>
             <li class="next">Error boundaries</li>
             <li class="next">Priorities and scheduling</li>
             <li class="next">Asynchronous rendering</li>
@@ -129,18 +138,24 @@
         <ol class="big-list">
             <li class="next">React DOM</li>
             <li class="next">React Native</li>
-            <li class="next">React VR</li>
+            <li class="next">React 360</li>
         </ol>
     </section>
 
     <section class="slide">
         <h2>Idea of a custom renderer:</h2>
+        <ol class="big-list">
+            <li class="next">Custom renderers allow us to render user interfaces in different environments using the same tools</li>
+            <li class="next">Declarative</li>
+            <li class="next">Component-based</li>
+            <li class="next">Learn once – use anywhere</li>
+        </ol>
+    </section>
+
+    <section class="slide">
+        <h2>Difference between rendering UIs and devices:</h2>
         <p>
-            Custom renderers allow us to render user interfaces in different environments
-            using the same tools
-        </p>
-        <p>
-            Learn once – use anywhere
+            Query the device by id/type?
         </p>
     </section>
 
@@ -150,6 +165,13 @@
             <li class="next">React Blessed</li>
             <li class="next">React Hardware</li>
         </ol>
+    </section>
+
+    <section class="slide">
+        <h2>React Blessed</h2>
+        <div>
+            <img src="https://raw.githubusercontent.com/Yomguithereal/react-blessed/master/img/demo.gif" />
+        </div>
     </section>
 
     <section class="slide">
@@ -174,7 +196,7 @@
             <li class="next">send an update signal to the host environment</li>
         </ol>
     </section>
-<!-- 
+<!--
     <section class="slide">
         <h2>JSX</h2>
         <pre>
@@ -205,6 +227,24 @@
 
     <section class="slide">
         <h2 class="shout shrink">Smart Home Appliances</h2>
+    </section>
+
+    <section class="slide" id="smart-lamp-tweet">
+        <div class="image-container">
+            <img src="./images/smart-lamp-tweet.png" />
+        </div>
+        <style>
+            #smart-lamp-tweet .image-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+            }
+
+            #smart-lamp-tweet img {
+                width: 700px;
+            }
+        </style>
     </section>
 
     <section class="slide" id="smart-device">
@@ -268,24 +308,66 @@
         <h2>Xiaomi ZigBee controller</h2>
     </section>
 
-    <section class="slide" id="mihome">
+    <section class="slide mihome">
         <h2>Xiaomi MiHome</h2>
         <div class="container">
-            <img src="images/mihome-1.png" class="next">
-            <img src="images/mihome-2.png" class="next">
-            <img src="images/mihome-3.png" class="next">
+            <img src="images/mihome-1.png">
         </div>
-        <style>
-            #mihome .container {
-                display: flex;
-                justify-content: center;
-            }
-            
-            #mihome img {
-                width: 300px;
-                position: absolute;
-            }
-        </style>
+    </section>
+
+    <section class="slide mihome">
+        <h2>Xiaomi MiHome</h2>
+        <div class="container">
+            <img src="images/mihome-2.png">
+        </div>
+    </section>
+
+    <section class="slide mihome">
+        <h2>Xiaomi MiHome</h2>
+        <div class="container">
+            <img src="images/mihome-3.png">
+        </div>
+    </section>
+
+    <section class="slide mihome">
+        <h2>Xiaomi MiHome</h2>
+        <div class="container">
+            <img src="images/mihome-4.png">
+        </div>
+    </section>
+
+    <section class="slide mihome">
+        <h2>Xiaomi MiHome</h2>
+        <div class="container">
+            <img src="images/mihome-5.png">
+        </div>
+    </section>
+
+    <section class="slide mihome">
+        <h2>Xiaomi MiHome</h2>
+        <div class="container">
+            <img src="images/mihome-6.png">
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>What APIs are used to control?</h2>
+        <ol class="big-list">
+            <li class="next">Communication with Xiaomi Cloud (no spec)</li>
+            <li class="next">Local network (reverse engineered)</li>
+        </ol>
+    </section>
+
+    <section class="slide">
+        <h2>Local network API</h2>
+        <ol class="big-list">
+            <li class="next">UDP port {port}<li>
+            <li class="next">Devices broadcast the updates in the local network<li>
+        </ol>
+    </section>
+
+    <section class="slide">
+        <h2>Programmatically controlling the smart home</h2>
     </section>
 
     <section class="slide" id="smart-home-react">
@@ -312,7 +394,7 @@
     </section>
 
     <section class="slide">
-        <h2 class="shout shrink">DEMO</h2>
+        <h2 class="shout shrink">Demo</h2>
     </section>
 
 
