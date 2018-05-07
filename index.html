@@ -30,6 +30,12 @@
             margin-top: 100px;
         }
 
+        .image-center-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
         .mihome .container {
             display: flex;
             justify-content: center;
@@ -51,7 +57,7 @@
     </header>
     <section class="slide" id="cover">
 
-        <h2>React renderer for your Smart home</h2>
+        <h2>React renderer <br /> for your Smart home</h2>
 
         <img src="images/react-logo.png" />
         <style>
@@ -66,7 +72,7 @@
                 margin:120px 0 0;
                 color:black;
                 text-align:center;
-                font-size: 120px;
+                font-size: 100px;
             }
 
             .performance img {
@@ -142,42 +148,65 @@
         </ol>
     </section>
 
-    <section class="slide">
-        <h2>Idea of a custom renderer:</h2>
-        <ol class="big-list">
-            <li class="next">Custom renderers allow us to render user interfaces in different environments using the same tools</li>
-            <li class="next">Declarative UI</li>
-            <li class="next">Component-based</li>
-            <li class="next">Learn once – use anywhere</li>
-        </ol>
-    </section>
-
-    <section class="slide">
-        <h2>Difference between rendering UIs and devices:</h2>
-        <p>
-            Query the device by id/type?
-        </p>
-    </section>
-
-    <section class="slide">
-        <h2>Less known renderers</h2>
-        <ol class="big-list">
-            <li class="next">React Blessed</li>
-            <li class="next">React Hardware</li>
-        </ol>
-    </section>
-
-    <section class="slide">
+    <section class="slide" id="blessed">
         <h2>React Blessed</h2>
         <div>
             <img src="https://raw.githubusercontent.com/Yomguithereal/react-blessed/master/img/demo.gif" />
         </div>
+        <style>
+            #blessed img {
+                width: 800px;
+            }
+        </style>
     </section>
 
+
     <section class="slide">
-        <h2>Exotic renderers</h2>
-        <iframe src="https://github.com/chentsulin/awesome-react-renderer"></iframe>
+        <h2>React Hardware</h2>
+
     </section>
+
+
+    <section class="slide">
+        <h2>Idea of a renderer:</h2>
+        <ol class="big-list">
+            <li class="next">Render user interfaces in different environments using the same tools</li>
+            <li class="next">Declarative component-based UI</li>
+            <li class="next">Learn once – use anywhere</li>
+        </ol>
+    </section>
+
+    <section class="slide" id="comparison">
+        <h2>Difference between UIs and devices:</h2>
+        <table>
+            <tr>
+                <th>Phase</th>
+                <th>DOM</th>
+                <th>Device</th>
+            </tr>
+            <tr>
+                <td>Initial render</td>
+                <td>createElement, <br />appendChild, addEventListener</td>
+                <td>connect, add listeners</td>
+            </tr>
+            <tr>
+                <td>Work loop</td>
+                <td></td>
+                <td>update params</td>
+            </tr>
+            <tr>
+                <td>Unmount</td>
+                <td>removeChild, <br/>removeEventListener</td>
+                <td>disconnect, remove listeners</td>
+            </tr>
+        </table>
+        <style>
+            #comparison tr {
+                line-height: 60px;
+            }
+        </style>
+    </section>
+
 
     <section class="slide">
         <h2>What can be rendered with React?</h2>
@@ -188,42 +217,14 @@
     </section>
 
     <section class="slide">
-        <h2>Simplified rendering process</h2>
+        <h2>React for a device</h2>
         <ol class="big-list">
             <li class="next">setState/forceUpdate</li>
-            <li class="next">update props of Host components</li>
+            <li class="next">update props of "device" component</li>
             <li class="next">calculate changed props</li>
             <li class="next">send an update signal to the host environment</li>
         </ol>
     </section>
-<!--
-    <section class="slide">
-        <h2>JSX</h2>
-        <pre>
-            <code> render() {</code>
-            <code>      return (</code>
-            <code>          <mark>&lt;Block color='red'&gt;</mark></code>
-            <code>              &lt;p&gt; 1 &lt;/p&gt;</code>
-            <code>              &lt;p&gt; 2 &lt;/p&gt;</code>
-            <code>          &lt;/Block&gt;</code>
-            <code>      )</code>
-            <code> }</code>
-        </pre>
-    </section>
-
-    <section class="slide">
-        <h2>JSX => Javascript</h2>
-        <pre>
-            <code> render() {</code>
-            <code>      return (</code>
-            <code>          <mark>React.createElement(Block</mark>, { color: 'red' }</code>
-            <code>              React.createElement('p', null, 1),</code>
-            <code>              React.createElement('p', null, 2)</code>
-            <code>          )</code>
-            <code>      )</code>
-            <code> }</code>
-        </pre>
-    </section> -->
 
     <section class="slide">
         <h2 class="shout shrink">Smart Home Appliances</h2>
@@ -298,17 +299,26 @@
             <li class="next">Sensors</li>
             <li class="next">Sockets</li>
             <li class="next">Vacuum Cleaner Robots</li>
-            <li class="next">Air Purifiers</li>
         </ol>
+    </section>
+
+    <section class="slide" id="zigbee-controller">
+        <h2>Xiaomi ZigBee controller</h2>
+        <div class="container">
+            <img src="./images/gateway-1.png">
+        </div>
+
+        <style>
+            #zigbee-controller img {
+                width: 800px;
+            }
+        </style>
     </section>
 
     <section class="slide">
         <h2>Xiaomi Yeelight Light bulb</h2>
     </section>
 
-    <section class="slide">
-        <h2>Xiaomi ZigBee controller</h2>
-    </section>
 
     <section class="slide mihome">
         <h2>Xiaomi MiHome</h2>
@@ -341,6 +351,13 @@
     <section class="slide mihome">
         <h2>Xiaomi MiHome</h2>
         <div class="container">
+            LIGHT CONTROL
+        </div>
+    </section>
+
+    <section class="slide mihome">
+        <h2>Xiaomi MiHome</h2>
+        <div class="container">
             <img src="images/mihome-5.png">
         </div>
     </section>
@@ -363,8 +380,8 @@
     <section class="slide">
         <h2>Local network protocol</h2>
         <ol class="big-list">
-            <li class="next">UDP port 54321</li>
-            <li class="next">Encrypted binary protocol</li>
+            <!-- <li class="next">UDP port 54321</li> -->
+            <li class="next">Encrypted binary protocol over UDP</li>
             <li class="next">Token required (could be obtained from the official app backup)</li>
             <li class="next">Devices broadcast the updates in the local network</li>
         </ol>
@@ -372,11 +389,23 @@
 
     <section class="slide">
         <h2>Miio on npm</h2>
-        <h2>GIF here</h2>
+        <div class="image-center-container">
+            <img src="./images/npm-miio.gif">
+        </div>
     </section>
 
     <section class="slide">
-        <h2>Programmatically controlling the smart home</h2>
+        <h2>Programmatic control</h2>
+        <div class="image-center-container">
+            <img src="./images/node-miio-code.png" width="500">
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>Programmatic control</h2>
+        <div class="image-center-container">
+            SHOW CONTROLLER
+        </div>
     </section>
 
     <section class="slide" id="smart-home-react">
