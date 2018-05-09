@@ -119,15 +119,26 @@
                 display: inline;
                 margin-left: 30px;
             }
+
+            .image-container img {
+                width: 100%;
+            }
         </style>
+        </style>
+    </section>
+
+    <section class="slide">
+        <div class="image-container">
+            <img src="./images/react-kyiv.png" />
+        </div>
     </section>
 
     <section class="slide" id="what-is-fiber">
         <h2>React Fiber</h2>
         <ul class="big-list">
             <li class="next">React core algorithm reimplementation (v16)</li>
-            <li class="next">Error boundaries</li>
             <li class="next">Priorities and scheduling</li>
+            <li class="next">Error boundaries</li>
             <li class="next">Asynchronous rendering</li>
             <li class="next bold">API for custom renderers</li>
         </ul>
@@ -160,6 +171,21 @@
         </style>
     </section>
 
+    <section class="slide" id="blessed-code">
+        <h2>React Blessed</h2>
+        <div class="container">
+            <img src="./images/react-blessed-code.png">
+        </div>
+        <style>
+            #blessed-code img {
+                width: 800px;
+            }
+        </style>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout shrink">User interfaces?</h2>
+    </section>
 
     <section class="slide">
         <h2>React Hardware</h2>
@@ -177,7 +203,7 @@
     </section>
 
     <section class="slide" id="comparison">
-        <h2>Difference between UIs and devices:</h2>
+        <h2>Common lifycycle of UIs and devices:</h2>
         <table>
             <tr>
                 <th>Phase</th>
@@ -185,17 +211,17 @@
                 <th>Device</th>
             </tr>
             <tr>
-                <td>Initial render</td>
-                <td>createElement, <br />appendChild, addEventListener</td>
+                <td><b>Initial render</b></td>
+                <td>createElement, <br />appendChild, <br />addEventListener</td>
                 <td>connect, add listeners</td>
             </tr>
-            <tr>
-                <td>Work loop</td>
-                <td></td>
-                <td>update params</td>
+            <tr class="next">
+                <td><b>Work loop</b></td>
+                <td>set "element.textContent" </td>
+                <td>set power state, brightness</td>
             </tr>
-            <tr>
-                <td>Unmount</td>
+            <tr class="next">
+                <td><b>Unmount</b></td>
                 <td>removeChild, <br/>removeEventListener</td>
                 <td>disconnect, remove listeners</td>
             </tr>
@@ -217,7 +243,7 @@
     </section>
 
     <section class="slide">
-        <h2>React for a device</h2>
+        <h2>React workflow for a device</h2>
         <ol class="big-list">
             <li class="next">setState/forceUpdate</li>
             <li class="next">update props of "device" component</li>
@@ -263,7 +289,7 @@
                     <li class="next">WiFi/Bluetooth connectivity</li>
                     <li class="next">Can be controlled remotely</li>
                     <li class="next">Brightness/color can be adjusted</li>
-                    <li class="next">Currently DDoSing Github 🤪</li>
+                    <!-- <li class="next">Currently DDoSing Github 🤪</li> -->
                 </ol>
             </div>
         </div>
@@ -317,6 +343,9 @@
 
     <section class="slide">
         <h2>Xiaomi Yeelight Light bulb</h2>
+        <div class="container">
+            <img src="./images/lamp-wifi.png">
+        </div>
     </section>
 
 
@@ -378,7 +407,7 @@
     </section>
 
     <section class="slide">
-        <h2>Local network protocol</h2>
+        <h2>Local network protocol - MiIO</h2>
         <ol class="big-list">
             <!-- <li class="next">UDP port 54321</li> -->
             <li class="next">Encrypted binary protocol over UDP</li>
@@ -388,23 +417,23 @@
     </section>
 
     <section class="slide">
-        <h2>Miio on npm</h2>
+        <h2>MiIO on npm</h2>
         <div class="image-center-container">
             <img src="./images/npm-miio.gif">
         </div>
     </section>
 
     <section class="slide">
-        <h2>Programmatic control</h2>
+        <h2>Controlling the lamp</h2>
         <div class="image-center-container">
             <img src="./images/node-miio-code.png" width="500">
         </div>
     </section>
 
     <section class="slide">
-        <h2>Programmatic control</h2>
+        <h2>Controlling the gateway</h2>
         <div class="image-center-container">
-            SHOW CONTROLLER
+            <img src="./images/miio-gateway.png" width="800">
         </div>
     </section>
 
