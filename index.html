@@ -124,22 +124,15 @@
                 width: 100%;
             }
         </style>
-        </style>
-    </section>
-
-    <section class="slide">
-        <div class="image-container">
-            <img src="./images/react-kyiv.png" />
-        </div>
     </section>
 
     <section class="slide" id="what-is-fiber">
         <h2>React Fiber</h2>
         <ul class="big-list">
-            <li class="next">React core algorithm reimplementation (v16)</li>
-            <li class="next">Priorities and scheduling</li>
-            <li class="next">Error boundaries</li>
-            <li class="next">Asynchronous rendering</li>
+            <li>React core algorithm reimplementation (v16)</li>
+            <li>Priorities and scheduling</li>
+            <li>Error boundaries</li>
+            <li>Asynchronous rendering</li>
             <li class="next bold">API for custom renderers</li>
         </ul>
 
@@ -153,9 +146,9 @@
     <section class="slide">
         <h2>Official renderers from Facebook:</h2>
         <ol class="big-list">
-            <li class="next">React DOM</li>
-            <li class="next">React Native</li>
-            <li class="next">React 360</li>
+            <li>React DOM</li>
+            <li>React Native</li>
+            <li>React 360</li>
         </ol>
     </section>
 
@@ -175,10 +168,16 @@
         <h2>React Blessed</h2>
         <div class="container">
             <img src="./images/react-blessed-code.png">
+
         </div>
         <style>
             #blessed-code img {
                 width: 800px;
+            }
+            #blessed-code .close {
+                height: 50%;
+                position: absolute;
+                top: 0;
             }
         </style>
     </section>
@@ -194,11 +193,25 @@
         </div>
     </section>
 
-    <section class="slide">
+    <section class="slide" id="hardware-code">
         <h2>React Hardware</h2>
         <div class="image-center-container">
             <img src="./images/react-hardware-code.png" width="600">
+            <div class="black-mask next"></div>
         </div>
+        <style>
+            #hardware-code .image-center-container {
+                position: relative;
+            }
+
+            #hardware-code .black-mask {
+                height: 368px;
+                width: 594px;
+                position: absolute;
+                top: 0;
+                background: rgba(0,0,0,0.7);
+            }
+        </style>
     </section>
 
 
@@ -211,8 +224,8 @@
         </ol>
     </section>
 
-    <section class="slide" id="comparison">
-        <h2>Common lifycycle of UIs and devices:</h2>
+    <section class="slide" id="ui-device-comparison">
+        <h2>Common lifecycle of UIs and devices:</h2>
         <table>
             <tr>
                 <th>Phase</th>
@@ -236,26 +249,38 @@
             </tr>
         </table>
         <style>
-            #comparison tr {
+            #ui-device-comparison tr {
                 line-height: 60px;
             }
         </style>
     </section>
 
 
-    <section class="slide">
+    <section class="slide" id="react-render-tree">
         <h2>What can be rendered with React?</h2>
-        <ol class="big-list">
-            <li class="next">a tree</li>
-            <li class="next">changes over time</li>
-        </ol>
+        <div class="image-container next">
+            <img src="./images/tree-changes.gif" />
+        </div>
+        <style>
+            #react-render-tree .image-container {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex: 1;
+            }
+            #react-render-tree img{
+                height: auto;
+                width: 50%;
+                margin-top: 60px;
+            }
+        </style>
     </section>
 
     <section class="slide">
         <h2>React workflow for a device</h2>
         <ol class="big-list">
-            <li class="next">setState/forceUpdate</li>
-            <li class="next">update props of "device" component</li>
+            <li>setState/forceUpdate</li>
+            <li>update props of "device" component</li>
             <li class="next">calculate changed props</li>
             <li class="next">send an update signal to the host environment</li>
         </ol>
@@ -268,6 +293,7 @@
     <section class="slide" id="smart-lamp-tweet">
         <div class="image-container">
             <img src="./images/smart-lamp-tweet.png" />
+            <img src="./images/smart-lamp-tweet-2.png" />
         </div>
         <style>
             #smart-lamp-tweet .image-container {
@@ -286,7 +312,7 @@
     <section class="slide" id="smart-device">
         <h2>Is your device smart?</h2>
         <div class="slide-container">
-            <div class="left-comparison">
+            <div class="comparison">
                 <img src="images/simple-led.jpg" class="smart-device-image">
                 <ol>
                     <li class="next">Turn on/off</li>
@@ -298,7 +324,6 @@
                     <li class="next">WiFi/Bluetooth connectivity</li>
                     <li class="next">Can be controlled remotely</li>
                     <li class="next">Brightness/color can be adjusted</li>
-                    <!-- <li class="next">Currently DDoSing Github 🤪</li> -->
                 </ol>
             </div>
         </div>
@@ -307,15 +332,11 @@
                 display: flex;
             }
 
-            #smart-device .left-comparison {
-                flex: 1;
-            }
-
-            #smart-device .right-comparison {
+            #smart-device .comparison {
                 flex: 1;
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
+                justify-content: flex-start;
                 align-items: flex-start;
             }
 
@@ -324,7 +345,7 @@
             }
         </style>
     </section>
-
+<!--
     <section class="slide">
         <h2>Xiaomi Smart Home</h2>
         <ol class="big-list">
@@ -335,7 +356,35 @@
             <li class="next">Sockets</li>
             <li class="next">Vacuum Cleaner Robots</li>
         </ol>
+    </section> -->
+
+
+    <section class="slide">
+        <h2>Xiaomi Yeelight Light bulb</h2>
+        <div class="container">
+            <img src="./images/lamp-wifi.png">
+        </div>
     </section>
+
+    <section class="slide">
+        <h2>Xiaomi MiHome</h2>
+        <div class="image-center-container">
+            <img src="images/mihome-yeelight-color.gif" width="280">
+        </div>
+    </section>
+
+    <section class="slide">
+        <h2>What protocols are used to control?</h2>
+        <ol class="big-list">
+            <li class="next">Communication with Xiaomi Cloud (proprietary, no spec)</li>
+            <li class="next">Local network – MiIO (proprietary, reverse engineered)</li>
+        </ol>
+    </section>
+
+    <section class="slide">
+        <h2 class="shout shrink">Lamp demo</h2>
+    </section>
+
 
     <section class="slide" id="zigbee-controller">
         <h2>Xiaomi ZigBee controller</h2>
@@ -350,12 +399,6 @@
         </style>
     </section>
 
-    <section class="slide">
-        <h2>Xiaomi Yeelight Light bulb</h2>
-        <div class="container">
-            <img src="./images/lamp-wifi.png">
-        </div>
-    </section>
 
 
     <section class="slide mihome">
@@ -386,13 +429,6 @@
         </div>
     </section>
 
-    <section class="slide">
-        <h2>Xiaomi MiHome</h2>
-        <div class="image-center-container">
-            <img src="images/mihome-yeelight-color.gif" width="280">
-        </div>
-    </section>
-
     <section class="slide mihome">
         <h2>Xiaomi MiHome</h2>
         <div class="container">
@@ -407,44 +443,23 @@
         </div>
     </section>
 
-    <section class="slide">
-        <h2>What protocols are used to control?</h2>
-        <ol class="big-list">
-            <li class="next">Communication with Xiaomi Cloud (proprietary, no spec)</li>
-            <li class="next">Local network (properietary, reverse engineered)</li>
-        </ol>
-    </section>
-
-    <section class="slide">
+    <!-- <section class="slide">
         <h2>Local network protocol - MiIO</h2>
         <ol class="big-list">
             <!-- <li class="next">UDP port 54321</li> -->
-            <li class="next">Encrypted binary protocol over UDP</li>
+            <!-- <li class="next">Encrypted binary protocol over UDP</li>
             <li class="next">Token required (could be obtained from the official app backup)</li>
             <li class="next">Devices broadcast the updates in the local network</li>
-        </ol>
-    </section>
+        </ol> -->
+    <!-- </section> -->
 
-    <section class="slide">
-        <h2>MiIO on npm</h2>
-        <div class="image-center-container">
-            <img src="./images/npm-miio.gif">
-        </div>
-    </section>
-
-    <section class="slide">
+    <!-- <section class="slide">
         <h2>Controlling the lamp</h2>
         <div class="image-center-container">
             <img src="./images/node-miio-code.png" width="500">
         </div>
-    </section>
+    </section> -->
 
-    <section class="slide">
-        <h2>Controlling the gateway</h2>
-        <div class="image-center-container">
-            <img src="./images/miio-gateway.png" width="800">
-        </div>
-    </section>
 
     <section class="slide" id="smart-home-react">
         <h2 class="shout">Smart Home  + React <br/> = <br/> ?</h2>
