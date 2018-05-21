@@ -232,7 +232,7 @@
                 <th>DOM</th>
                 <th>Device</th>
             </tr>
-            <tr>
+            <tr class="next">
                 <td><b>Initial render</b></td>
                 <td>createElement, <br />appendChild, <br />addEventListener</td>
                 <td>connect, add listeners</td>
@@ -280,7 +280,7 @@
         <h2>React workflow for a device</h2>
         <ol class="big-list">
             <li>setState/forceUpdate</li>
-            <li>update props of "device" component</li>
+            <li class="next">update props of "device" component</li>
             <li class="next">calculate changed props</li>
             <li class="next">send an update signal to the host environment</li>
         </ol>
@@ -293,14 +293,15 @@
     <section class="slide" id="smart-lamp-tweet">
         <div class="image-container">
             <img src="./images/smart-lamp-tweet.png" />
-            <img src="./images/smart-lamp-tweet-2.png" />
+            <img src="./images/smart-lamp-tweet-2.png" class="next" />
         </div>
         <style>
             #smart-lamp-tweet .image-container {
                 display: flex;
-                justify-content: center;
                 align-items: center;
                 height: 100%;
+                flex-direction: column;
+                justify-content: center;
             }
 
             #smart-lamp-tweet img {
@@ -387,7 +388,7 @@
 
 
     <section class="slide" id="zigbee-controller">
-        <h2>Xiaomi ZigBee controller</h2>
+        <h2>Xiaomi ZigBee Gateway</h2>
         <div class="container">
             <img src="./images/gateway-1.png">
         </div>
@@ -484,8 +485,34 @@
         </style>
     </section>
 
+    <section class="slide" id="smart-dom-link">
+        <h2 class="shout shrink">
+            <a href="https://github.com/pterolex/react-smart-dom" target="_blank">
+                github.com/pterolex/react-smart-dom
+            </a>
+        </h2>
+        <style>
+            #smart-dom-link a {
+                font-size: 64px;
+            }
+        </style>
+    </section>
+
+    <section class="slide" id="smart-dom-npm">
+        <h2 class="shout shrink next">
+            <a href="https://npmjs.org/react-smart-dom" target="_blank">
+                npmjs.org/react-smart-dom
+            </a>
+        </h2>
+        <style>
+            #smart-dom-npm a {
+                font-size: 64px;
+            }
+        </style>
+    </section>
+
     <section class="slide">
-        <h2 class="shout shrink">Demo</h2>
+        <h2 class="shout shrink">Demo <br />with sensors</h2>
     </section>
 
 
